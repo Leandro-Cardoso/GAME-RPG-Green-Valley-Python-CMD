@@ -1,0 +1,12 @@
+{
+    "title" : "Memória Perdida",
+    "description" : "Nossa história começa em uma praia a noite, sob a luz das estrelas, e o som das ondas se chocando com a areia da costa.\nAo acordar você percebe que não se lembra de nada e está se entindo muito cansado(a) e com dores pelo corpo.\n\n",
+    "insights" : {
+        "Você percebe que você sofreu um naufrágio." : {}
+    },
+    "background-sounds" : [],
+    "sound-effects" : [],
+    "buffs" : [],
+    "debuffs" : [],
+    "choices" : {}
+}
