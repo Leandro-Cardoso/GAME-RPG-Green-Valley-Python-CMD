@@ -3,16 +3,16 @@ class World():
     def __init__(self, name:str = None, location:str = None) -> None:
         self.name = name
         self.location = location
-        self.choices = []
+        self.choice_ids = []
     def set_name(self, name:str) -> None:
         '''Set world name.'''
         self.name = name
     def set_location(self, location:str) -> None:
         '''Set world location.'''
         self.location = location
-    def make_choice(self, choice:int) -> None:
-        '''Make choice, the choice is a number int.'''
-        self.choices.append(choice)
+    def add_choice_id(self, choice_id:int) -> None:
+        '''Add choice id in choice id list.'''
+        self.choice_ids.append(choice_id)
 
 if __name__ == '__main__':
     world = World(location = 'Green Valley')

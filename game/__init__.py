@@ -1,4 +1,4 @@
-import sys, json
+import sys
 
 # GAME CONFIGS:
 from config import GAME_PATH
@@ -20,4 +20,7 @@ if __name__ == '__main__':
 
     player.set_name('Leandro')
 
+    history = find_history(1000)
+
     print(player.name, d20.roll())
+    print(history['title'])
