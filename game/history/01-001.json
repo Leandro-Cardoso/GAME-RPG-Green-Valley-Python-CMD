@@ -1,0 +1,13 @@
+{
+    "id" : 1001,
+    "chapter_number" : 1,
+    "chapter_name" : "MEMÓRIA PERDIDA",
+    "title" : "Levantar e olhar ao redor.",
+    "description" : "Você levanta e olha ao seu redor, e percebe que está em uma praia pequena e que sofreu um naufrágio.\nBem próximo de você e ainda muito perto da costa, é visível uma pequena cidade.\n\n",
+    "insights" : [],
+    "background-sounds" : [],
+    "sound-effects" : [],
+    "buffs" : [],
+    "debuffs" : [],
+    "choice_ids" : []
+}

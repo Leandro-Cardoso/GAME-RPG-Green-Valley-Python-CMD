@@ -1,4 +1,4 @@
-import json, textwrap
+import json, os, textwrap
 
 from config import GAME_HISTORY_PATH, GAME_HISTORY_NAMES
 
@@ -7,9 +7,8 @@ class World():
     def __init__(self, name:str = None, location:str = None) -> None:
         self.name = name
         self.location = location
-        self.choice_ids = [1000]
-        self.history = None
-        self.find_history()
+        self.choiced_ids = [1000]
+        self.history = self.get_history(1000)
 
     def set_name(self, name:str) -> None:
         '''Set world name.'''
@@ -21,10 +20,10 @@ class World():
 
     def add_choice_id(self, choice_id:int) -> None:
         '''Add choice id in choice id list.'''
-        self.choice_ids.append(choice_id)
+        self.choiced_ids.append(choice_id)
 
-    def find_history(self) -> None:
-        '''Find actual history point, based in choice id.'''
+    def get_history(self, id:int) -> dict:
+        '''Get history point, based in id.'''
         for history_name in GAME_HISTORY_NAMES:
             file_path = GAME_HISTORY_PATH + '\\' + history_name
 
@@ -32,16 +31,33 @@ class World():
                 history_to_check = json.load(json_file)
                 json_file.close()
 
-            if history_to_check['id'] == self.choice_ids[-1]:
-                self.history = history_to_check
-                break
+            if history_to_check['id'] == id:
+                return history_to_check
+
+    def set_history(self, id:int) -> None:
+        '''Set actual history point, based in id.'''
+        self.history = self.get_history(id)
 
     def draw_window(self) -> None:
         '''Draw game window in CMD.'''
+        os.system('cls')
+
         chapter_number = self.history['chapter_number']
         chapter_name = self.history['chapter_name']
-        chapter = f' CAPÍTULO {chapter_number}: {chapter_name} '
-        print(f'{chapter:=^100}\n')
+        text = f' CAPÍTULO {chapter_number}: {chapter_name} '
+        print(f'{text:=^100}\n')
 
         text = self.history['description']
         print(textwrap.fill(text, width = 100))
+
+        text = ''
+        print(f'{text:_^100}\n')
+
+        for i, id in enumerate(self.history['choice_ids']):
+            history = self.get_history(id)
+            option = history['title']
+            text = f' {i + 1} - {option}\n'
+            print(textwrap.fill(text, width = 100))
+        
+        text = ' By Leandro Cardoso '
+        print(f'\n{text:=^100}\n')
