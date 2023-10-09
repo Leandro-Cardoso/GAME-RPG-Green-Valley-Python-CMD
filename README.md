@@ -11,10 +11,13 @@
     <h2>Sobre</h2>
 </div>
 
-⚙️🔨 <font color="grey">**Em desenvolvimento** (alpha)</font><br>
+⚙️🔨 **Em desenvolvimento**<br>
 Um RPG de texto para rodar no terminal, com uma prévia de minha história original, que se passa na pequena região de Green Valley..<br><br>
 Esse projeto foi desenvolvido como trabalho da Universidade de Vassouras, curso de Engenharia de Software, disciplina de Pensamento Computacional, ministrada pelo professor João Coelho.<br>
 
+<p>
+    <img src=".github/preview2.png" alt="Preview 2" />
+</p>
 <p>
     <img src=".github/preview.png" alt="Preview" />
 </p>
@@ -31,11 +34,11 @@ Esse projeto foi desenvolvido como trabalho da Universidade de Vassouras, curso 
 4. História separada usando Json ⚙️✔️
 5. Função para buscar história ⚙️✔️
 6. Função para imprimir tela ⚙️✔️
-7. Sistema de batalha ⚙️🔨 <font color="grey">Em desenvolvimento</font>
-8. História completada ⚙️🔨 <font color="grey">Em desenvolvimento</font>
-9. Menu ⚙️🔨 <font color="grey">Em desenvolvimento</font>
-10. Créditos ⚙️🔨 <font color="grey">Em desenvolvimento</font>
-11. Executável funcional ⚙️🔨 <font color="grey">Em desenvolvimento</font>
+7. Menu ⚙️✔️
+8. Sistema de batalha ⚙️🔨 Em desenvolvimento
+9. História completada ⚙️🔨 Em desenvolvimento
+10. Créditos ⚙️🔨 Em desenvolvimento
+11. Executável funcional ⚙️🔨 Em desenvolvimento
 
 <div align="center">
     <h2>Autor</h2>
