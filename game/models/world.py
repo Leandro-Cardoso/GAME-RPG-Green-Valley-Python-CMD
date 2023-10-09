@@ -22,6 +22,20 @@ class World():
         '''Add choice id in choice id list.'''
         self.choiced_ids.append(choice_id)
 
+    def draw_menu(self) -> None:
+        '''Draw game main menu.'''
+        title = [
+            '=' * 100,
+            ' '*3 + '____   ____    _____   _____   _   _    __     __     _      _       _       _____  __   __',
+            ' '*2 + '/ ___| |  _ \  | ____| | ____| | \ | |   \ \   / /    / \    | |     | |     | ____| \ \ / /',
+            '| |  _  | |_) | |  _|   |  _|   |  \| |    \ \ / /    / _ \   | |     | |     |  _|    \ V /',
+            '| |_| | |  _ <  | |___  | |___  | |\  |     \ V /    / ___ \  | |___  | |___  | |___    | |',
+            '\____| |_| \_\ |_____| |_____| |_| \_|      \_/    /_/   \_\ |_____| |_____| |_____|   |_|',
+            '=' * 100
+        ]
+        for line in title:
+            print(f'{line:^100}')
+
     def get_history(self, id:int) -> dict:
         '''Get history point, based in id.'''
         for history_name in GAME_HISTORY_NAMES:
