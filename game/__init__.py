@@ -25,3 +25,4 @@ if __name__ == '__main__':
     print(player.name, d20.roll())
     world.draw_window()
     world.draw_menu()
+    choice = int(input(' CHOICE: '))

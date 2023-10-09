@@ -24,6 +24,8 @@ class World():
 
     def draw_menu(self) -> None:
         '''Draw game main menu.'''
+        os.system('cls')
+
         title = [
             '=' * 100,
             ' '*3 + '____   ____    _____   _____   _   _    __     __     _      _       _       _____  __   __',
@@ -31,10 +33,23 @@ class World():
             '| |  _  | |_) | |  _|   |  _|   |  \| |    \ \ / /    / _ \   | |     | |     |  _|    \ V /',
             '| |_| | |  _ <  | |___  | |___  | |\  |     \ V /    / ___ \  | |___  | |___  | |___    | |',
             '\____| |_| \_\ |_____| |_____| |_| \_|      \_/    /_/   \_\ |_____| |_____| |_____|   |_|',
+            '\0',
             '=' * 100
         ]
         for line in title:
             print(f'{line:^100}')
+        
+        menu = [
+            '1 - Start Game',
+            '2 - Credits',
+            '3 - Exit Game'
+        ]
+        print('\0')
+        for iten in menu:
+            print(f' {iten}')
+        
+        text = ' By Leandro Cardoso '
+        print(f'\n{text:=^100}')
 
     def get_history(self, id:int) -> dict:
         '''Get history point, based in id.'''
@@ -74,4 +89,4 @@ class World():
             print(textwrap.fill(text, width = 100))
         
         text = ' By Leandro Cardoso '
-        print(f'\n{text:=^100}\n')
+        print(f'\n{text:=^100}')
