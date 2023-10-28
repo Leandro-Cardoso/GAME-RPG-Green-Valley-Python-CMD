@@ -1,7 +1,7 @@
 import sys
 
 # GAME CONFIGS:
-from config import GAME_PATHS
+from config import *
 for path in GAME_PATHS:
     sys.path.insert(0, path)
 
@@ -10,10 +10,4 @@ from game import Game
 game = Game()
 
 # RUN:
-def run():
-    '''Run game.'''
-    pass
-
-# TESTS:
-if __name__ == '__main__':
-    print(game.name)
+game.run()
