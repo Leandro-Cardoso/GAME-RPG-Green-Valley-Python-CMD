@@ -1,5 +1,5 @@
 import sys
-
+'''
 # GAME CONFIGS:
 from config import GAME_PATH
 
@@ -10,7 +10,7 @@ from game.models import *
 
 world = World()
 player = Player()
-
+'''
 # RUN:
 def run():
     '''Run game.'''
