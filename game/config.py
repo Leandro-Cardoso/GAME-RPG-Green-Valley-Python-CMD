@@ -29,11 +29,14 @@ GAME_AUTHORS_STR += '.'
 # GAME DESCRIPTION:
 GAME_DESCRIPTION = f'{GAME_NAME} (versão {GAME_VERSION}): É um jogo de RPG de texto no tema medieval de fantasia, de mecânica inspirada em "D&D" e "Final Fantasy", desenvolvido para rodar no "CMD do Windows".\nA história se passa na pequena região de "Green Valley". O jogo conta apena uma breve história de uma lore muito mais rica e original e que será explorada em futuros jogos, acompanhe em: {GAME_REPOSITORY}.\n{GAME_AUTHORS_STR}'
 
-# GAME PATH:
-GAME_PATH = os.getcwd()
+# GAME PATHS:
+GAME_ROOT = os.getcwd()
+GAME_PATHS = [
+    GAME_ROOT + '\game\models'
+]
 
 # GAME HISTORY JSONS:
-GAME_HISTORY_PATH = GAME_PATH + '\game\history'
+GAME_HISTORY_PATH = GAME_ROOT + '\game\history'
 GAME_HISTORY_NAMES = os.listdir(GAME_HISTORY_PATH)
 
 # TESTS:

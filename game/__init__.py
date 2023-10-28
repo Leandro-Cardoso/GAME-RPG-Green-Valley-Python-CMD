@@ -1,16 +1,14 @@
 import sys
-'''
+
 # GAME CONFIGS:
-from config import GAME_PATH
+from config import GAME_PATHS
+for path in GAME_PATHS:
+    sys.path.insert(0, path)
 
-sys.path.insert(0, GAME_PATH)
+# CREATE GAME OBJECTS:
+from game import Game
+game = Game()
 
-# IMPORTS AND CREATE GAME OBJECTS:
-from game.models import *
-
-world = World()
-player = Player()
-'''
 # RUN:
 def run():
     '''Run game.'''
@@ -18,11 +16,4 @@ def run():
 
 # TESTS:
 if __name__ == '__main__':
-    d20 = Dice(20)
-
-    player.set_name('Leandro')
-
-    print(player.name, d20.roll())
-    world.draw_window()
-    world.draw_menu()
-    choice = int(input(' CHOICE: '))
+    print(game.name)
