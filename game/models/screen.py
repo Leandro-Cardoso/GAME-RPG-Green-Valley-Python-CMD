@@ -1,39 +1,62 @@
-from os import system
+import json, textwrap
+from os import listdir, system
+
+from config import GAME_JSON_PATH, GAME_AUTHOR
 
 class Screen():
     '''Create a screen.'''
-    def __init__(self) -> None:
-        self.name = ''
-    
-    def draw_main_menu(self) -> None:
-        '''Open game menu.'''
+    def __init__(self, id:int = 1) -> None:
+        self.id = id
+
+    def get_dict_by_id(self) -> dict:
+        '''Get dict (Json file) by id.'''
+        jsons = listdir(GAME_JSON_PATH)
+        for file in jsons:
+            with open(GAME_JSON_PATH + '\\' + file, 'r', encoding = 'utf-8') as json_file:
+                converted_file = json.load(json_file)
+                json_file.close()
+            if converted_file['id'] == self.id:
+                return converted_file
+            
+    def get_choice_ids(self) -> list:
+        '''Get choice ids.'''
+        dictionary = self.get_dict_by_id()
+        return dictionary['choice_ids']
+
+    def draw(self) -> None:
+        '''Draw game screen.'''
         system('cls')
-        title = [
-            '=' * 100,
-            ' '*3 + '____   ____    _____   _____   _   _    __     __     _      _       _       _____  __   __',
-            ' '*2 + '/ ___| |  _ \  | ____| | ____| | \ | |   \ \   / /    / \    | |     | |     | ____| \ \ / /',
-            '| |  _  | |_) | |  _|   |  _|   |  \| |    \ \ / /    / _ \   | |     | |     |  _|    \ V /',
-            '| |_| | |  _ <  | |___  | |___  | |\  |     \ V /    / ___ \  | |___  | |___  | |___    | |',
-            '\____| |_| \_\ |_____| |_____| |_| \_|      \_/    /_/   \_\ |_____| |_____| |_____|   |_|',
-            '\0',
-            '=' * 100
-        ]
-        for line in title:
+        dictionary = self.get_dict_by_id()
+
+        # DRAW BASE:
+        print('=' * 100)
+        with open(GAME_JSON_PATH + '\\base.json', 'r', encoding = 'utf-8') as file:
+            file_json = json.load(file)
+            game_title = file_json['game_title']
+            file.close()
+
+        # DRAW GAME TITLE:
+        for line in game_title:
             print(f'{line:^100}')
         
-        menu = [
-            '1 - Start Game',
-            '2 - Credits',
-            '3 - Exit Game'
-        ]
-        print('\0')
-        for iten in menu:
-            print(f' {iten}')
-        
-        text = ' By Leandro Cardoso '
-        print(f'\n{text:=^100}')
+        # DRAW TITLE:
+        title = ' ' + dictionary['title'] + ' '
+        title = f'\n{title:=^100}\n'
+        print(title.upper())
 
-# TESTS:
-if __name__ == '__main__':
-    screen = Screen()
-    screen.open_menu()
+        # DRAW DESCRIPTION:
+        description = dictionary['description']
+        if description != '':
+            print(textwrap.fill(description, width = 100))
+            print('\n' + '-' * 100 + '\n')
+        
+        # DRAW OPTIONS:
+        options = dictionary['options']
+        for i, option in enumerate(options):
+            option = option.upper()
+            print(f' {i + 1} - {option}')
+
+        # DRAW AUTHOR:
+        author = ' By ' + GAME_AUTHOR['name'] + ' '
+        author = f'\n{author:=^100}'
+        print(author)

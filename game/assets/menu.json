@@ -1,0 +1,11 @@
+{
+    "id" : 1,
+    "title" : "teste",
+    "description" : "Uma descrição temporaria.",
+    "options" : [
+        "iniciar jogo",
+        "créditos",
+        "sair"
+    ],
+    "choice_ids" : []
+}
