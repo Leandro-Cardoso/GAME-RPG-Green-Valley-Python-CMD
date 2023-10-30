@@ -1,0 +1,11 @@
+{
+    "id" : 1000,
+    "title" : "memória perdida",
+    "description" : "Você dorme profundamente... Ao acordar já está de manhã, mas você ainda se sente cansado e dolorido, pois a areia não é tão confortável quanto parecia. Olhando ao redor, você percebe que há alguns pedaços de madeira, que sinaliza ter ocorrido um naufrágio. Isso explica você estar deitado na areia. Na costa você avista uma pequena cidade portuária.",
+    "choices" : [
+        "ir até a cidade"
+    ],
+    "choice_ids" : [1003],
+    "add_effects" : [],
+    "remove_effects" : []
+}

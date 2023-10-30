@@ -1,7 +1,7 @@
 {
     "id" : 1000,
     "title" : "memória perdida",
-    "description" : "Nossa história começa em uma praia a noite, sob a luz das estrelas, e o som das ondas se chocando com a areia da costa.\nAo acordar você percebe que não se lembra de nada e está se entindo muito cansado(a) e com dores pelo corpo.",
+    "description" : "Nossa história começa em uma praia a noite, sob a luz das estrelas, e o som das ondas se chocando com a areia da costa. Você está deitado(a) na areia. Ao acordar você percebe que não se lembra de nada e está se entindo muito cansado(a) e com dores pelo corpo.",
     "choices" : [
         "dormir na areia",
         "olhar ao redor"
