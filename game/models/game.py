@@ -13,8 +13,14 @@ class Game():
         '''Start dialogue with player.'''
         try:
             response = int(input('DIGITE UMA OPÇÃO: '))
-            if response in self.screen.choice_ids:
+            if response <= len(self.screen.choice_ids):
+                self.choiced_id = self.screen.choice_ids[response - 1]
+            
+            # EXIT:
+            elif response == 9:
                 self.choiced_id = response
+
+            # ERRORS:
             else:
                 self.error = f'A opção {response} não existe, tente outra.'
         except:
@@ -39,7 +45,7 @@ class Game():
             self.dialogue()
 
             # EXIT:
-            if self.choiced_id == 3:
+            if self.choiced_id == 9:
                 self.is_running = False
             
             # CREATE SCREEN:
