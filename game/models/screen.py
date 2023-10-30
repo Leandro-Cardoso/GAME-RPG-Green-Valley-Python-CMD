@@ -5,11 +5,25 @@ from config import GAME_JSON_PATH, GAME_AUTHOR
 
 class Screen():
     '''Create a screen.'''
-    def __init__(self, id:int = 1) -> None:
+    def __init__(self, id:int = 0) -> None:
         self.id = id
+        self.game_title = self.get_game_title()
+        self.json = self.get_json()
+        self.title = self.json['title']
+        self.description = self.json['description']
+        self.choices = self.json['choices']
+        self.choice_ids = self.json['choice_ids']
 
-    def get_dict_by_id(self) -> dict:
-        '''Get dict (Json file) by id.'''
+    def get_game_title(self) -> list:
+        '''Get game title from Json file.'''
+        file_path = GAME_JSON_PATH + '\\base.json'
+        with open(file_path, 'r', encoding = 'utf-8') as file:
+            file_json = json.load(file)
+            file.close()
+        return file_json['game_title']
+
+    def get_json(self) -> dict:
+        '''Get Json file by id.'''
         jsons = listdir(GAME_JSON_PATH)
         for file in jsons:
             with open(GAME_JSON_PATH + '\\' + file, 'r', encoding = 'utf-8') as json_file:
@@ -18,45 +32,33 @@ class Screen():
             if converted_file['id'] == self.id:
                 return converted_file
             
-    def get_choice_ids(self) -> list:
-        '''Get choice ids.'''
-        dictionary = self.get_dict_by_id()
-        return dictionary['choice_ids']
-
     def draw(self) -> None:
         '''Draw game screen.'''
         system('cls')
-        dictionary = self.get_dict_by_id()
-
-        # DRAW BASE:
-        print('=' * 100)
-        with open(GAME_JSON_PATH + '\\base.json', 'r', encoding = 'utf-8') as file:
-            file_json = json.load(file)
-            game_title = file_json['game_title']
-            file.close()
 
         # DRAW GAME TITLE:
-        for line in game_title:
+        print('=' * 100)
+        for line in self.game_title:
             print(f'{line:^100}')
         
         # DRAW TITLE:
-        title = ' ' + dictionary['title'] + ' '
+        if self.title == '':
+            title = ''
+        else:
+            title = ' ' + self.title + ' '
         title = f'\n{title:=^100}\n'
         print(title.upper())
 
         # DRAW DESCRIPTION:
-        description = dictionary['description']
-        if description != '':
-            print(textwrap.fill(description, width = 100))
+        if self.description != '':
+            print(textwrap.fill(self.description, width = 100))
             print('\n' + '-' * 100 + '\n')
         
-        # DRAW OPTIONS:
-        options = dictionary['options']
-        for i, option in enumerate(options):
-            option = option.upper()
-            print(f' {i + 1} - {option}')
+        # DRAW CHOICES:
+        for i, choice in enumerate(self.choices):
+            choice = choice.upper()
+            print(f' {i + 1} - {choice}')
 
         # DRAW AUTHOR:
         author = ' By ' + GAME_AUTHOR['name'] + ' '
-        author = f'\n{author:=^100}'
-        print(author)
+        print(f'\n{author:=^100}')

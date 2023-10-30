@@ -1,11 +1,11 @@
 {
-    "id" : 1,
-    "title" : "teste",
-    "description" : "Uma descrição temporaria.",
-    "options" : [
+    "id" : 0,
+    "title" : "",
+    "description" : "",
+    "choices" : [
         "iniciar jogo",
         "créditos",
         "sair"
     ],
-    "choice_ids" : []
+    "choice_ids" : [1, 2, 3]
 }
