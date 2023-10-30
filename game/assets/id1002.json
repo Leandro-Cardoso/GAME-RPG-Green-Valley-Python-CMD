@@ -1,0 +1,12 @@
+{
+    "id" : 1002,
+    "title" : "memória perdida",
+    "description" : "Você olha ao redor e apesar do escuro percebe que há alguns pedaços de madeira, que sinaliza ter ocorrido um naufrágio. Isso explica você estar deitado na areia. Na costa você avista uma pequena cidade portuária. Entretanto como está muito tarde e escuro, o unico estabelecimento que parece estar funcionando e iluminado é oque parece ser uma estalagem.",
+    "choices" : [
+        "ir até a estalagem",
+        "dormir na areia"
+    ],
+    "choice_ids" : [1004, 1001],
+    "add_effects" : [],
+    "remove_effects" : []
+}
