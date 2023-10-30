@@ -6,5 +6,7 @@
         "dormir na areia",
         "olhar ao redor"
     ],
-    "choice_ids" : [1001, 1002]
+    "choice_ids" : [1001, 1002], 
+    "add_effects" : ["tired"],
+    "remove_effects" : []
 }

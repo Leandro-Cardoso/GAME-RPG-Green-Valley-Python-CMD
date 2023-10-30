@@ -13,6 +13,8 @@ class Screen():
         self.description = self.json['description']
         self.choices = self.json['choices']
         self.choice_ids = self.json['choice_ids']
+        self.add_effects = self.json['add_effects']
+        self.remove_effects = self.json['remove_effects']
 
     def get_game_title(self) -> list:
         '''Get game title from Json file.'''

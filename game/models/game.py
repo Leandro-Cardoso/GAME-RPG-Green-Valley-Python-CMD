@@ -1,10 +1,12 @@
 from screen import Screen
+from player import Player
 
 class Game():
     '''New game.'''
     def __init__(self) -> None:
         self.is_running = False
         self.screen = Screen()
+        self.player = Player()
         self.error = ''
         self.choiced_id = 0
         self.choiced_ids = [1000]
@@ -43,6 +45,10 @@ class Game():
 
             # START DIALOGUE:
             self.dialogue()
+
+            # APPLY EFFECTS:
+            self.player.apply_effects(self.screen.add_effects, self.screen.remove_effects)
+            print(self.player.stats)
 
             # EXIT:
             if self.choiced_id == 9:
