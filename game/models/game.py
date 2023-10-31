@@ -39,6 +39,11 @@ class Game():
             # DRAW SCREEN:
             self.screen.draw()
 
+            # TESTS:
+            print('Nome:', self.player.name)
+            print('Status:', self.player.stats)
+            print('Efeitos:', self.player.effects)
+
             # DRAW ERROR:
             if self.error != '':
                 print(f'ERRO: {self.error}')
@@ -52,7 +57,6 @@ class Game():
 
             # APPLY EFFECTS:
             self.player.apply_effects(self.screen.add_effects, self.screen.remove_effects)
-            print(self.player.stats)
 
             # EXIT:
             if self.choiced_id == 9:
