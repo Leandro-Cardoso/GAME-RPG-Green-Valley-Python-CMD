@@ -46,6 +46,10 @@ class Game():
             # START DIALOGUE:
             self.dialogue()
 
+            # ADD TO CHOICED IDS LIST:
+            if self.choiced_id >= 1000 and self.choiced_id not in self.choiced_ids:
+                self.choiced_ids.append(self.choiced_id)
+
             # APPLY EFFECTS:
             self.player.apply_effects(self.screen.add_effects, self.screen.remove_effects)
             print(self.player.stats)
