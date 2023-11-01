@@ -15,6 +15,7 @@ class Screen():
         self.choice_ids = self.json['choice_ids']
         self.add_effects = self.json['add_effects']
         self.remove_effects = self.json['remove_effects']
+        self.player = None
 
     def get_game_title(self) -> list:
         '''Get game title from Json file.'''
@@ -60,6 +61,28 @@ class Screen():
         for i, choice in enumerate(self.choices):
             choice = choice.upper()
             print(f' {i + 1} - {choice}')
+        
+        # DRAW PLAYER INFO:
+        if self.player != None and self.id != 0:
+            print('\n' + '-' * 100 + '\n')
+            # STATUS:
+            status = 'Stats: '
+            for stat in list(self.player.stats):
+                status += f'{stat[:3]} = {self.player.stats[stat]}'
+                if stat != list(self.player.stats)[-1]:
+                    status += ' | '
+            print(status)
+            # EFFECTS:
+            if self.player.effects != []:
+                effects = 'Effects: '
+                for effect in list(self.player.effects):
+                    effects += effect
+                    if len(list(self.player.effects)) > 1:
+                        if effect == list(self.player.effects)[-2]:
+                            effects += ' e '
+                        elif effect != list(self.player.effects)[-1]:
+                            effects += ', '
+                print(effects)
 
         # DRAW AUTHOR:
         author = ' By ' + GAME_AUTHOR['name'] + ' '

@@ -36,13 +36,14 @@ class Game():
         '''Run game.'''
         self.is_running = True
         while self.is_running:
+            # APPLY EFFECTS:
+            self.player.apply_effects(self.screen.add_effects, self.screen.remove_effects)
+
+            # UPDATE SCREEN PLAYER INFO:
+            self.screen.player = self.player
+
             # DRAW SCREEN:
             self.screen.draw()
-
-            # TESTS:
-            print('Nome:', self.player.name)
-            print('Status:', self.player.stats)
-            print('Efeitos:', self.player.effects)
 
             # DRAW ERROR:
             if self.error != '':
@@ -54,9 +55,6 @@ class Game():
             # ADD TO CHOICED IDS LIST:
             if self.choiced_id >= 1000 and self.choiced_id not in self.choiced_ids:
                 self.choiced_ids.append(self.choiced_id)
-
-            # APPLY EFFECTS:
-            self.player.apply_effects(self.screen.add_effects, self.screen.remove_effects)
 
             # EXIT:
             if self.choiced_id == 9:
