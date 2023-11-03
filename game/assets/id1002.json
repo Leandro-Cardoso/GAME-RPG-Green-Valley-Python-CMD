@@ -6,7 +6,7 @@
         "ir até a estalagem",
         "dormir na areia"
     ],
-    "choice_ids" : [1004, 1001],
+    "choice_ids" : [1003, 1001],
     "add_effects" : [],
     "remove_effects" : []
 }

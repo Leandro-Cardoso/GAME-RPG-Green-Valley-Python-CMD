@@ -1,0 +1,12 @@
+{
+    "id" : 1003,
+    "title" : "memória perdida",
+    "description" : "Você caminha até o estabelecimento e começa a ouvir conversas e rizadas de dentro... Ao abrir a porta, derrepende por um momento as vozes se cessam, você se depara com um bar lotado, todos olham para você tentando disfarçar e passam a conversar mais baixo, parecem estar muito surpresos e curiosos com você.",
+    "choices" : [
+        "ir até o bar",
+        "tentar conversar com alguém"
+    ],
+    "choice_ids" : [1004, 1005],
+    "add_effects" : [],
+    "remove_effects" : []
+}
